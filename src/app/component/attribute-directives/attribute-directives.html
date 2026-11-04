@@ -1,0 +1,36 @@
+<div class="container">
+
+    <h3>Attribute directive</h3>
+
+    <div id="div1" [ngClass]="div1BgColor">
+        Div 1
+    </div>
+
+    <button (click)="makeBlue()">
+        Make Blue
+    </button>
+    <button (click)="makeRed()">
+        Make Red
+    </button>
+    <button (click)="toggleColor()">
+        Toggle Color
+    </button>
+
+    <br>
+
+    <div id="div1" [ngClass]="num1 > num2 ? 'bg-primary' : 'bg-danger'">
+        Div 1
+    </div>
+
+    <br>
+    <label>
+        Enter first number
+        <input type="number" [(ngModel)]="num1" >
+    </label>
+    <br>
+    <label>
+        Enter second number
+        <input type="number" [(ngModel)]="num2" >
+    </label>
+
+</div>

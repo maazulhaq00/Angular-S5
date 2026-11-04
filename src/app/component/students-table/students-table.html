@@ -1,0 +1,33 @@
+<div class="container mt-4">
+    <h3>Students</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Student City</th>
+                <th scope="col">Status</th>
+                <th scope="col">Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let student of studentsList">
+                <th scope="row">{{student.student_id}}</th>
+                <td>{{student.student_name}}</td>
+                <td>{{student.student_city}}</td>
+                <td [ngStyle]="{'background-color': student.isActive ? 'yellow' : 'red'}">
+                    <span *ngIf="student.isActive">Active</span>
+                    <span *ngIf="!student.isActive">Not Active</span>
+                </td>
+                <td>
+                    <div [ngStyle]="{'background-color': 'pink', 'width': student.percent+'%' }">
+                        {{student.percent}}
+                    </div>
+                </td>
+
+            </tr>
+
+        </tbody>
+    </table>
+</div>

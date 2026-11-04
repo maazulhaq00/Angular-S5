@@ -1,0 +1,51 @@
+<div class="container mt-4">
+
+
+
+    <h3>Data Binding</h3>
+
+    <!-- 1. interpolation -->
+
+    <h4>Interpolation</h4>
+
+    <p>Course Name is {{courseName}} </p>
+
+    <img src="{{imgUrl}}" width="200px" alt="">
+
+    <p>Your Favourite Course</p>
+
+    <input type="{{inputType}}" name="favCourse" value="{{courseName}}"> {{courseName}}
+
+    <!-- 1. Property Binding -->
+
+
+    <h4>Property Binding</h4>
+
+    <img [src]="imgUrl" alt="" width="200px">
+
+    <p>Select Mode:</p>
+
+    <input [type]="inputType" name="mode" value="online"> Online
+    <input [type]="inputType" name="mode" value="onsite"> Onsite
+
+    <!-- 1. Event Binding -->
+
+    <h4>Event Binding</h4>
+
+    <button (click)="sayHello('Fawad')">Click Here</button>
+
+    <button (click)="changeCourse('React')">Change Course</button>
+
+    <!-- 1. Event Binding -->
+
+    <h4>Two Way Data Binding</h4>
+
+    <label>
+        Course Name
+        <input type="text" [(ngModel)]="courseName">
+
+    </label>
+
+
+
+</div>

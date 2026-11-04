@@ -1,0 +1,57 @@
+<div class="container">
+    <div id="div1" *ngIf="isDiv1Visible">
+        div 1
+    </div>
+
+    <button (click)="showDiv1()">show</button>
+
+    <button (click)="hideDiv1()">hide</button>
+    <br><br>
+    
+    <label>
+        Enter Number 1
+        <input type="number" [(ngModel)]="num1">
+    </label><br>
+    <label>
+        Enter Number 2
+        <input type="number" [(ngModel)]="num2">
+    </label><br>
+
+
+    <div class="div2" *ngIf="num1 > num2">
+        {{num1}} is greater than {{num2}}
+    </div>
+    <div class="div2" *ngIf="num1 <= num2">
+        {{num1}} is lesser than or equals to {{num2}}
+    </div>
+
+    <p *ngFor="let city of cities" >The city is {{city}}</p>
+
+    <ul>
+        <li *ngFor="let city of cities">{{city}}</li>
+    </ul>
+
+    <label>
+        Select your currect semester
+
+        <select [(ngModel)]="currentSemester" >
+            <option *ngFor="let sem of semesterArray" value="{{sem}}">{{sem}}</option>
+        </select>
+
+    </label>
+
+    <p>Sem is {{currentSemester}}</p>
+
+
+    <div [ngSwitch]="currentSemester">
+        <p *ngSwitchCase="'CPISM'" >You will learn: Web Designing</p>
+        <p *ngSwitchCase="'DISM'" >You will learn: Dynamic Application Development with PHP/MySQL</p>
+        <p *ngSwitchCase="'HDSE-I'" >You will learn: Dynamic Application Development with ASP.NET & SQL Server</p>
+        <p *ngSwitchCase="'HDSE-II'" >You will learn: Dynamic Application Development with MERN</p>
+        <p *ngSwitchCase="'ADSE-I'" >You will learn: Mobile Application Development with Flutter & Dart</p>
+        <p *ngSwitchCase="'ADSE-II'" >You will learn: Data Science & AI</p>
+        <p *ngSwitchDefault >Invalid Sem selected</p>
+    </div>
+
+
+</div>
